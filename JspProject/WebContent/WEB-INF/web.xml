@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>
+	JspProject</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+	
+  <description>MySQL Test App</description>
+  <resource-ref>
+      <description>DB Connection</description>
+      <res-ref-name>jdbc/mysql</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <res-auth>Container</res-auth>
+  </resource-ref>
+  
+  
+   <filter>
+    <display-name>passFilter</display-name>
+    <filter-name>passFilter</filter-name>
+    <filter-class>kr.ac.filter.passFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>passFilter</filter-name>
+    <url-pattern>/air_reservation.jsp</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+    <display-name>seatFilter</display-name>
+    <filter-name>seatFilter</filter-name>
+    <filter-class>kr.ac.filter.seatFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>seatFilter</filter-name>
+    <url-pattern>/end_reservation.jsp</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+    <display-name>creditFilter</display-name>
+    <filter-name>creditFilter</filter-name>
+    <filter-class>kr.ac.filter.creditFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>creditFilter</filter-name>
+    <url-pattern>/credit.jsp</url-pattern>
+  </filter-mapping>
+  
+  
+
+   <servlet>
+    <description>예약 정보 처리</description>
+    <display-name>reserve process</display-name>
+    <servlet-name>reserve process</servlet-name>
+    <servlet-class>kr.ac.mvc.controller.reserve</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>reserve process</servlet-name>
+    <url-pattern>/reserve.do</url-pattern>
+  </servlet-mapping>
+</web-app>

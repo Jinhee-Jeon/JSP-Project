@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/ 
+	http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd" 
+	version="2.0">
+
+	<description>처음 만드는 커스텀 태그</description>
+	<display-name>HelloCustomTag</display-name>
+	<tlib-version>1.2</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>HelloCustomTag</short-name>
+
+	<tag>
+		<description>문자열 Hello My Custom Tag!!! 출력 예제</description>
+		<display-name>문자열 출력</display-name>
+		<name>hello</name>
+		<tag-class>mytag.HelloCustomTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+
+</taglib>
